@@ -26,7 +26,7 @@ jobs:
         go-version: ${{ matrix.go-version }}
         cache: true
         cache-dependency-path: |
-            ~\AppData\Local\go-build
+            ~/go/pkg/mod
     - name: Setup Golang caches
       uses: actions/cache@v3
       with:
@@ -36,7 +36,7 @@ jobs:
           # * Build cache (Mac)
           # * Build cache (Windows)
           path: |
-              ~\AppData\Local\go-build
+              ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ matrix.go-version }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
               ${{ runner.os }}-go-${{ matrix.go-version }}-
