@@ -20,6 +20,8 @@ jobs:
         go-version: [1.20.x]
     runs-on: windows-latest
     steps:
+    - name: Fetch Repository
+      uses: actions/checkout@v3
     - name: Install Go
       uses: actions/setup-go@v4
       with:
@@ -38,8 +40,6 @@ jobs:
           key: ${{ runner.os }}-go-${{ matrix.go-version }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
               ${{ runner.os }}-go-${{ matrix.go-version }}-
-    - name: Fetch Repository
-      uses: actions/checkout@v3
     - name: Run Test
       uses: nick-fields/retry@v2
       with:
