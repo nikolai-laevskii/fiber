@@ -7,11 +7,6 @@ on:
           - '**'
           - '!docs/**'
           - '!**.md'
-    pull_request:
-        paths:
-          - '**'
-          - '!docs/**'
-          - '!**.md'
 name: Vulnerability Check
 jobs:
   Security:
