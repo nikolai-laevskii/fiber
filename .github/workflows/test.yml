@@ -24,11 +24,9 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: ${{ matrix.go-version }}
-        cache: false
+        cache: true
         cache-dependency-path: |
             ~/go/pkg/mod
-            ~/.cache/go-build
-            ~/Library/Caches/go-build
             ~\AppData\Local\go-build
     - name: Setup Golang caches
       uses: actions/cache@v3
